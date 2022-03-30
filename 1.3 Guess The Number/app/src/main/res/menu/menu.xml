@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_new"
+        android:title="New game">
+    </item>
+    <item
+        android:id="@+id/menu_difficulty"
+        android:title="Select difficulty">
+
+        <menu>
+            <item android:title="Easy"
+                android:id="@+id/submenu_e">
+            </item>
+            <item android:title="Normal(default)"
+                android:id="@+id/submenu_n" >
+            </item>
+            <item android:title="Hard"
+                android:id="@+id/submenu_h" >
+            </item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_exit"
+        android:orderInCategory="3"
+        android:title="Exit">
+    </item>
+
+
+</menu>
