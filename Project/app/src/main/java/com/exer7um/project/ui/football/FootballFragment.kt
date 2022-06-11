@@ -13,6 +13,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.time.LocalDateTime
 
 const val BASE_URL = "https://v3.football.api-sports.io/"
 
@@ -49,7 +50,7 @@ class FootballFragment : Fragment() {
             .build()
             .create(FootballApiInterface::class.java)
 
-        val retrofitData = retrofitBuilder.getFootballData()
+        val retrofitData = retrofitBuilder.getFootballData(from = LocalDateTime.now().minusDays(14).toString().split('T')[0], to = LocalDateTime.now().plusDays(14).toString().split('T')[0])
 
         retrofitData.enqueue(object : Callback<FootballData> {
             override fun onResponse(
